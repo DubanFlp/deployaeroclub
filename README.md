@@ -17,7 +17,23 @@ Jairo Andres Vesga Salazar
 
 `1. Install-php-apache-composer-postgres.sh`
 
+ Para la ejecución de este script se realiza de la siguiente manera:
+
+```Console
+sudo ./Install-php-apache-composer-postgres.sh
+```
+
 `2. GenerateandConfig-ssh.sh`
+    
+Para la ejecucion de este script no es necesario ejecutarlo como sudo dado que la llave se va a generar por el usuario que estamos logueados. Entonces se ejecutaria de la siguiente manera:
+
+```Console
+./GenerateandConfig-ssh.sh
+```
+
+Luego de ejecutar el script en pantalla se muestra la clave ssh que agregaremos en el siguiente link:
+
+* https://github.com/settings/keys
 
 `3. CloningRepo.sh`
 
