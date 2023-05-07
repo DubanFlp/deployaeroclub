@@ -1,5 +1,14 @@
 #!/bin/bash
 
+
+# Definicion de Correo Electronico para generar llave SSH
+echo "Por favor Ingresar el correo asociado a su cuenta GitHub Ej: your_email@example.com"
+read correo_git
+
+# Definición de contraseña para conexion SSH a GitHub
+echo "Por favor, Escribe la contraseña para la conexión SSH a GitHub"
+read pass_ssh
+
 # Crea el directorio ~/.ssh si no existe
 if [ ! -d ~/.ssh ]; then
   mkdir -p ~/.ssh
@@ -11,7 +20,7 @@ if [ -f ~/.ssh/id_ed25519 ]; then
     echo "La clave ssh ya existe en el archivo ~/.ssh/id_ed25519."
 else
     # Generar Clave ssh con el algoritmo ed25519 para conectar server linux
-    ssh-keygen -t ed25519 -C "dubanfelipem@gmail.com" -N "necochea23" -f ~/.ssh/id_ed25519
+    ssh-keygen -t ed25519 -C "$correo_git" -N "$pass_ssh" -f ~/.ssh/id_ed25519
 
     echo "Clave ssh generada y guardada en el archivo ~/.ssh/id_ed25519."
 fi
