@@ -17,7 +17,7 @@ Jairo Andres Vesga Salazar
 
 `1. Install-php-apache-composer-postgres.sh`
 
- Para la ejecución de este script se realiza de la siguiente manera:
+La ejecución de este script se realiza de la siguiente manera:
 
 ```Console
 sudo ./Install-php-apache-composer-postgres.sh
@@ -25,19 +25,29 @@ sudo ./Install-php-apache-composer-postgres.sh
 
 `2. GenerateandConfig-ssh.sh`
     
-Para la ejecucion de este script no es necesario ejecutarlo como sudo dado que la llave se va a generar por el usuario que estamos logueados. Entonces se ejecutaria de la siguiente manera:
+No es necesario ejecutar este script con permisos sudo, ya que la llave se va a generar por el usuario que esté logueado. La ejecución se realiza de la siguiente manera:
 
 ```Console
 ./GenerateandConfig-ssh.sh
 ```
 
-Luego de ejecutar el script en pantalla se muestra la clave ssh que agregaremos en el siguiente link:
+Después de ejecutar el script, se mostrará la clave SSH que deberás agregar en el siguiente enlace:
 
 * https://github.com/settings/keys
 
 `3. CloningRepo.sh`
 
+Para poder ejecutar este script, debes tener configurada previamente la llave SSH en la página de GitHub. Además, debes ejecutar el comando con permisos sudo, ya que se clonará el repositorio en la ruta `/var/www/html/`, la cual requiere permisos de administrador.
+
+```Console
+sudo ./CloningRepo.sh
+```
+
 `4. ConfigAppAeroclub.sh`
+
+```Console
+./ConfigAppAeroclub.sh
+```
 
 `5. ConfigVirtualHost.sh`
 
