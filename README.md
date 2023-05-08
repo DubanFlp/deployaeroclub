@@ -17,6 +17,17 @@ Jairo Andres Vesga Salazar
 
 `1. Install-php-apache-composer-postgres.sh`
 
+El objetivo de este script es automatizar la instalación y configuración de un entorno de desarrollo web con PHP, Apache, Composer y PostgreSQL. El script realiza los siguientes pasos:
+
++ Actualiza el sistema operativo
++ Agrega el repositorio PHP y actualiza el sistema
++ Instala PHP 8.2 y sus dependencias
++ Instala Apache y mod_php
++ Configura Apache para iniciar al arrancar el sistema
++ Instala Composer y sus dependencias
++ Verifica si PostgreSQL está instalado, y si no lo está, lo instala
++ Crea un usuario y le da permisos para crear bases de datos en PostgreSQL
+
 La ejecución de este script se realiza de la siguiente manera:
 
 ```Console
