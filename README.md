@@ -95,3 +95,13 @@ Para poder ejecutar este script, debes ejecutar el comando con permisos sudo ya 
 ```Console
 sudo ./ConfigVirtualHost.sh
 ```
+
+Luego de correr todos los scripts es necesario ir al directorio `/var/www/html/aeroclub` y correr las migraciones con el siguiente comando:
+
+```Console
+php bin/console doctrine:migrations:migrate
+```
+
+Verificación del aplicativo web para el aeroclub 
+
+* http://localhost/index.php/login

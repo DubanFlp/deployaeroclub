@@ -77,8 +77,10 @@ else
   sudo -u postgres psql -c "CREATE DATABASE aeroclub;"
 fi
 
-echo "La instalación de PHP8.2, Apache2, Composer ha Finalizado con exito"
+echo "################################################################################"
+echo "La instalación de PHP8.2, Apache2, Composer y Postgres ha Finalizado con exito"
 echo "Los datos de conexion de postgres son:"
 echo "Usuario: aeroclub" 
 echo "Clave: aeroclub23"
 echo "Base de datos: aeroclub"
+echo "################################################################################"
