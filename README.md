@@ -53,6 +53,15 @@ No es necesario ejecutar este script con permisos sudo, ya que la llave se va a 
 
 `3. CloningRepo.sh`
 
+La finalidad de este script es clonar el repositorio `git@github.com:jsalazarudi/aeroclub.git` en el servidor, configurar la conexión a Git y establecer los permisos adecuados en la carpeta clonada. El script realiza los siguientes pasos:
+
++ Configura el archivo ~/.ssh/config para que el usuario root pueda utilizar la clave SSH del usuario "necochea".
++ Clona el repositorio `git@github.com:jsalazarudi/aeroclub.git` en el directorio `/var/www/html/`.
++ Configura los parámetros de GIT, como el nombre de usuario, correo electrónico y directorio seguro.
++ Agrega el usuario "necochea" al grupo "www-data".
++ Cambia el propietario de la carpeta `/var/www al usuario` "www-data".
++ Configura los permisos en la carpeta clonada `/var/www/html/aeroclub`. Los permisos se establecen en 775, lo que  significa que el propietario y el grupo tienen permisos completos y el resto de los usuarios tienen permisos de lectura y escritura
+
 Para poder ejecutar este script, debes tener configurada previamente la llave SSH en la página de GitHub. Además, debes ejecutar el comando con permisos sudo, ya que se clonará el repositorio en la ruta `/var/www/html/`, la cual requiere permisos de administrador.
 
 ```Console
