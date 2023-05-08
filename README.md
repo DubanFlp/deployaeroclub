@@ -35,16 +35,21 @@ sudo ./Install-php-apache-composer-postgres.sh
 ```
 
 `2. GenerateandConfig-ssh.sh`
-    
+
+El proposito del script es generar una clave SSH y configurarla correctamente para permitir una conexión segura entre la computadora local y la cuenta de GitHub del usuario. Al generar una clave SSH y agregarla a la cuenta de GitHub, el usuario puede conectarse y realizar acciones en su cuenta de GitHub sin tener que ingresar su nombre de usuario y contraseña cada vez que realiza una operación, lo que aumenta la seguridad y la comodidad al mismo tiempo. La clave SSH también se utiliza para autenticar al usuario con el servidor remoto y encriptar las comunicaciones entre la computadora local y el servidor remoto. El script realiza los siguientes pasos:
+
++ Solicita al usuario que proporcione su correo electrónico asociado a su cuenta de GitHub y la contraseña para la conexión SSH a GitHub. 
++ Verifica si el directorio ~/.ssh existe y, si no existe, lo crea y le asigna permisos.
++ Verifica si la clave SSH ya existe en el archivo ~/.ssh/id_ed25519. Si no existe, genera una clave SSH con el algoritmo ed25519 y la guarda en el archivo ~/.ssh/id_ed25519. 
++ Crea el archivo ~/.ssh/config si no existe y agrega información de configuración en él. 
++ Inicia el agente SSH en segundo plano, agrega la clave SSH privada al agente SSH y muestra la clave SSH pública en la pantalla. 
++ Solicita al usuario que agregue la clave SSH pública en la página de configuración de claves de GitHub. * https://github.com/settings/keys
+
 No es necesario ejecutar este script con permisos sudo, ya que la llave se va a generar por el usuario que esté logueado. La ejecución se realiza de la siguiente manera:
 
 ```Console
 ./GenerateandConfig-ssh.sh
 ```
-
-Después de ejecutar el script, se mostrará la clave SSH que deberás agregar en el siguiente enlace:
-
-* https://github.com/settings/keys
 
 `3. CloningRepo.sh`
 
