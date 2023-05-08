@@ -70,10 +70,28 @@ sudo ./CloningRepo.sh
 
 `4. ConfigAppAeroclub.sh`
 
+El objetivo de este script es preparar un proyecto web basado en Symfony para ser desplegado en un servidor en producción. Los cambios realizados en el archivo ".env.local" se enfocan en configurar el proyecto para que use las credenciales de base de datos y las variables de entorno adecuadas para el entorno de producción. Además, se instala una dependencia llamada symfony/apache-pack que proporciona una serie de herramientas útiles para la configuración y gestión de un servidor web basado en Symfony. El script realiza los siguientes pasos:
+
++ Instala una dependencia llamada symfony/apache-pack en un proyecto web ubicado en "/var/www/html/aeroclub" mediante el administrador de paquetes de PHP Composer.
++ Crea un archivo llamado ".env.local" en el directorio del proyecto, copiando el contenido de un archivo existente llamado ".env".
++ Cambia una variable de entorno llamada "APP_ENV" de "dev" a "prod" en el archivo ".env.local".
++ Modifica una variable de entorno llamada "PASSWORD_ADMIN" en el archivo ".env.local" de "#" (comentario) a "necochea23".
++ Modifica la cadena de conexión a la base de datos en el archivo ".env.local" para que apunte a un servidor de base de datos PostgreSQL en "127.0.0.1:5432" utilizando el nombre de usuario, contraseña y la base de datos "aeroclub". 
+
 ```Console
 ./ConfigAppAeroclub.sh
 ```
 
 `5. ConfigVirtualHost.sh`
 
+Este script configura un VirtualHost en Apache para un sitio web del Aeroclub y reinicia el servicio de Apache para activar la nueva configuración. El script realiza los siguientes pasos:
 
++ Copia de seguridad del archivo de configuración existente `000-default.conf` en el directorio "/etc/apache2/sites-available".
++ Crear un nuevo VirtualHost en el archivo `000-default.conf` utilizando la sintaxis de Apache. Este VirtualHost especifica la dirección del servidor de correo electrónico del administrador y la ruta de acceso al directorio de documentos del sitio web, así como la configuración de permisos de archivo y de directorio para la carpeta pública. También establece algunas opciones de configuración de Apache como el manejo de errores y los registros de acceso.
++ Reinicia el servicio de Apache para que los cambios de configuración tengan efecto.
+
+Para poder ejecutar este script, debes ejecutar el comando con permisos sudo ya que se editaran archivos de la carpeta "/etc/apache2/sites-available" la cual requiere permisos de administrador.
+
+```Console
+sudo ./ConfigVirtualHost.sh
+```
