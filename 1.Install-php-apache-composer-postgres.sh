@@ -69,7 +69,16 @@ if sudo -u postgres psql -lqt | cut -d \| -f 1 | grep -qw aeroclub; then
   echo "El usuario ya existe en la base de datos."
 else
   # Si el usuario no existe, crearlo y darle permisos
+  echo "Creando Usuario y contraseña en postgres.."
   sudo -u postgres psql -c "CREATE USER aeroclub WITH PASSWORD 'aeroclub23';"
+  echo "Configurando permisos a usuario creado en postgres.."
   sudo -u postgres psql -c "ALTER USER aeroclub CREATEDB;"
+  echo "Creando base de datos en postgres.."
   sudo -u postgres psql -c "CREATE DATABASE aeroclub;"
 fi
+
+echo "La instalación de PHP8.2, Apache2, Composer ha Finalizado con exito"
+echo "Los datos de conexion de postgres son:"
+echo "Usuario: aeroclub" 
+echo "Clave: aeroclub23"
+echo "Base de datos: aeroclub"
