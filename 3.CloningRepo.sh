@@ -30,4 +30,4 @@ sudo chown -R :www-data /var/www
 echo "Configurando permisos en la carpeta clonada "
 sudo chmod -R 775 /var/www/html/aeroclub
 
-
+echo "Por favor cerrar sesión y volver a ingresar para poder ejecutar el siguiente script"
