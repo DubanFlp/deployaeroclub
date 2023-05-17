@@ -9,7 +9,7 @@ sudo git clone git@github.com:jsalazarudi/aeroclub.git
 cd /var/www/html/aeroclub
 
 # Agregar el usaurio al grupo www-data
-echo "Agregando el usaurio $USER al grupo www-data"
+echo "Agregando el usuario $USER al grupo www-data"
 sudo usermod -a -G www-data $USER
 
 # Cambiar Propietario a www-data
