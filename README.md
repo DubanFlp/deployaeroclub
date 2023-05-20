@@ -46,7 +46,7 @@ La finalidad de este script es clonar el repositorio `https://github.com/jsalaza
 La ejecución de este script se realiza de la siguiente manera:
 
 ```Console
-sudo ./2.CloningRepo.sh
+./2.CloningRepo.sh
 ```
 
 `3. ConfigAppAeroclub.sh`
@@ -55,9 +55,11 @@ El objetivo de este script es preparar un proyecto web basado en Symfony para se
 
 + Instala una dependencia llamada symfony/apache-pack en un proyecto web ubicado en `/var/www/html/aeroclub` mediante el administrador de paquetes de PHP Composer.
 + Crea un archivo llamado `.env.local` en el directorio del proyecto, copiando el contenido de un archivo existente llamado ".env".
-+ Cambia una variable de entorno llamada `APP_ENV` de "dev" a "prod" en el archivo `.env.local`.
 + Modifica una variable de entorno llamada `PASSWORD_ADMIN` en el archivo `.env.local` de "#" (comentario) a "necochea23".
-+ Modifica la cadena de conexión a la base de datos en el archivo `.env.local` para que apunte a un servidor de base de datos PostgreSQL en "127.0.0.1:5432" utilizando el nombre de usuario, contraseña y la base de datos "aeroclub". 
++ Modifica la cadena de conexión a la base de datos en el archivo `.env.local` para que apunte a un servidor de base de datos PostgreSQL en "127.0.0.1:5432" utilizando el nombre de usuario, contraseña y la base de datos "aeroclub".
++ Ejecuta migraciones de la base de datos.
++ Configura Usuario administrador en el aplicativo.
++ Cambia una variable de entorno llamada `APP_ENV` de "dev" a "prod" en el archivo `.env.local`.
 
 ```Console
 ./3.ConfigAppAeroclub.sh
@@ -77,12 +79,7 @@ Para poder ejecutar este script, debes ejecutar el comando con permisos sudo ya 
 sudo ./4.ConfigVirtualHost.sh
 ```
 
-Luego de correr todos los scripts es necesario ir al directorio `/var/www/html/aeroclub` y correr las migraciones con el siguiente comando:
 
-```Console
-php bin/console doctrine:migrations:migrate
-```
-
-Verificación del aplicativo web para el aeroclub 
+Validaremos que el aplicativo web esté funcionando, para esto probaremos de forma local ingresando al siguiente link 
 
 * http://localhost/index.php/login
