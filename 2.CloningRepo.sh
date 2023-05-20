@@ -2,11 +2,10 @@
 
 # Clonar el repositorio 
 echo "Clonando repositorio git@github.com:jsalazarudi/aeroclub.git"
-cd /var/www/html/
 sudo git clone git@github.com:jsalazarudi/aeroclub.git
 
-# Cambiar de directorio a /var/www/html/aeroclub
-cd /var/www/html/aeroclub
+# Copiar el repositorio en el /var/www/html
+sudo cp -R aeroclub /var/www/html/
 
 # Agregar el usaurio al grupo www-data
 echo "Agregando el usuario $USER al grupo www-data"
