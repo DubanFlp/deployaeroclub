@@ -36,9 +36,9 @@ sudo ./1.Install-php-apache-composer-postgres.sh
 
 `2. CloningRepo.sh`
 
-La finalidad de este script es clonar el repositorio `git@github.com:jsalazarudi/aeroclub.git` en el servidor y establecer los permisos adecuados en la carpeta clonada. El script realiza los siguientes pasos:
+La finalidad de este script es clonar el repositorio `https://github.com/jsalazarudi/aeroclub.git` en el servidor y establecer los permisos adecuados en la carpeta clonada. El script realiza los siguientes pasos:
 
-+ Clona el repositorio `git@github.com:jsalazarudi/aeroclub.git` en el directorio `/var/www/html/`.
++ Clona el repositorio `https://github.com/jsalazarudi/aeroclub.git` en el directorio `/var/www/html/`.
 + Agrega el usuario logueado al grupo `www-data`.
 + Cambia el propietario de la carpeta `/var/www` al usuario a "www-data".
 + Configura los permisos en la carpeta clonada `/var/www/html/aeroclub`. Los permisos se establecen en 775, lo que  significa que el propietario y el grupo tienen permisos completos y el resto de los usuarios tienen permisos de lectura y escritura

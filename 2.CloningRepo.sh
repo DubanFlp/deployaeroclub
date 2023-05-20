@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Clonar el repositorio 
-echo "Clonando repositorio git@github.com:jsalazarudi/aeroclub.git"
-sudo git clone git@github.com:jsalazarudi/aeroclub.git
+echo "Clonando repositorio https://github.com/jsalazarudi/aeroclub.git"
+sudo git clone https://github.com/jsalazarudi/aeroclub.git
 
 # Copiar el repositorio en el /var/www/html
 sudo cp -R aeroclub /var/www/html/
